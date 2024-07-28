@@ -1,0 +1,1 @@
+export const springUrl = import.meta.env.VITE_SPRING_URL;

@@ -1,0 +1,21 @@
+image: node:16
+
+pipelines:
+  default:
+    - step:
+        name: Install dependencies
+        caches:
+          - node
+        script:
+          - cd app/
+          - npm install
+          - npm i jest --global
+          - npm i frisby joi
+    - step:
+        name: Test and build
+        caches:
+          - node
+        script:
+          - cd app/
+          - npm test
+          - npm run build
